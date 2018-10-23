@@ -1,0 +1,64 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Restaurant Manager</title>
+    <link rel="stylesheet" href="Styles/StyleSheet.css" type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+       <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <div id="wrapper">
+            <div id="banner">
+                <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/health-banner — копия.jpg" Width="100%" />
+            </div>
+            <div id="navigation">
+                <ul id="nav">
+                    <li><asp:HyperLink runat="server" NavigateUrl="~/Pages/Start.aspx">Главная</asp:HyperLink></li>
+                    <li><asp:HyperLink runat="server" NavigateUrl="~/Pages/About.aspx">О нас</asp:HyperLink></li>
+                    <li><asp:HyperLink runat="server" NavigateUrl="~/Index.aspx">Меню</asp:HyperLink></li>
+                    <li><asp:HyperLink runat="server">Онлайн-заказ</asp:HyperLink></li>
+                    <li><asp:HyperLink runat="server">Доставка</asp:HyperLink></li>
+                    <li><asp:HyperLink runat="server" NavigateUrl="~/Pages/Reservation.aspx">Бронь столов</asp:HyperLink></li>
+                    
+
+                    <li><asp:HyperLink runat="server">Контакты</asp:HyperLink></li>
+
+                    <li><asp:HyperLink runat="server" NavigateUrl="~/Pages/Management/Management.aspx">Management</asp:HyperLink></li>
+
+                    <li style ="float:right">
+                        <asp:HyperLink ID="lnkRegister" NavigateUrl="~/Pages/Account/Register.aspx" runat="server">Регистрация</asp:HyperLink>
+                        <asp:HyperLink ID="litStatus" runat="server" NavigateUrl="~/Pages/ShoppingCart.aspx"></asp:HyperLink>
+                    </li>
+
+                    <li style ="float:right">
+                        <asp:HyperLink ID="lnkLogin" NavigateUrl="~/Pages/Account/Login.aspx" runat="server">Вход</asp:HyperLink>
+                        <asp:LinkButton ID="lnkLogout" runat="server" OnClick="lnkLogout_Click">Выход</asp:LinkButton>
+                    </li>
+                    
+                </ul>
+
+
+
+
+            </div>
+            <div id="content">
+
+                  <asp:ContentPlaceHolder id="ContentPlaceHolder2" runat="server">        
+                      <asp:Panel ID="pnlProducts" runat="server">
+                      </asp:Panel>
+        </asp:ContentPlaceHolder>
+
+             </div>   
+            <div id="footer">    </div>
+        </div>
+    </div>
+
+    </form>
+</body>
+</html>
